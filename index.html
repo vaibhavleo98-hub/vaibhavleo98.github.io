@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Name – Resume & Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            --primary: #2a6eea;
+            --bg: #f8f9fa;
+            --section: #fff;
+            --text: #333;
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 32px 16px 16px 16px;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 2rem;
+        }
+        header img {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+        }
+        header .intro {
+            flex: 2;
+        }
+        h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.1em;
+            color: var(--primary);
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 4px;
+        }
+        section {
+            background: var(--section);
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px #0001;
+            padding: 24px 20px;
+        }
+        .resume-list {
+            margin: 0; padding: 0;
+            list-style: none;
+        }
+        .resume-list li {
+            margin-bottom: 15px;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+        }
+        .project-card {
+            border: 1px solid #ececec;
+            border-radius: 6px;
+            padding: 14px;
+            background: #fafcff;
+            box-shadow: 0 1px 4px #0001;
+        }
+        .contact-info {
+            font-size: 1.05em;
+        }
+        .contact-info a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 10px; }
+            header { flex-direction: column; align-items: flex-start; }
+            header img { margin-bottom: 12px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <img src="https://placehold.co/90x90?text=Photo" alt="Your Photo">
+        <div class="intro">
+            <h1>Your Name</h1>
+            <div>Job Title or Roles (e.g., UX Designer, Web Developer)</div>
+            <p>
+                Brief summary about you: skills, interests, what you’re passionate about. (2–3 lines)
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <h2>Resume</h2>
+        <ul class="resume-list">
+            <li>
+                <strong>Work Experience</strong><br>
+                Job Title – Company <br>
+                2021–Present <br>
+                <em>Short description of your responsibilities/achievements.</em>
+            </li>
+            <li>
+                <strong>Previous Job Title</strong> – Previous Company <br>
+                2019–2021 <br>
+                <em>What you worked on, top achievements, skills used.</em>
+            </li>
+            <li>
+                <strong>Education</strong><br>
+                Degree, Field – School/College, Year<br>
+            </li>
+            <li>
+                <strong>Skills</strong>: HTML, CSS, JavaScript, UX Design, [Add yours]
+            </li>
+        </ul>
+        <p>
+            <a href="your-resume.pdf" target="_blank">Download PDF Resume</a>
+        </p>
+    </section>
+
+    <section>
+        <h2>Portfolio / My Work</h2>
+        <div class="portfolio-grid">
+            <div class="project-card">
+                <strong>Project Title 1</strong><br>
+                <em>Short description of what this project is and the skills used.</em><br>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="project-card">
+                <strong>Project Title 2</strong><br>
+                <em>Another project summary, relevant accomplishments.</em><br>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </section>
+
+    <section>
+        <h2>Contact</h2>
+        <div class="contact-info">
+            📧 <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+            💼 <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a><br>
+            🌐 <a href="https://yourportfolio.site" target="_blank">Website/Portfolio (if any)</a>
+        </div>
+    </section>
+</div>
+</body>
+</html>

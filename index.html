@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name – Product Designer & Developer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name – Product Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|DM+Sans:400,700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #111217;
-      --fg: #1a1b22;
+      --bg: #15171b;
+      --fg: #191b20;
       --primary: #00cfff;
-      --accent: #efefef;
-      --text: #e8e8e8;
-      --card: #181922;
+      --accent: #ffffff;
+      --text: #ededed;
+      --card: #21242b;
       --radius: 24px;
-      --transition: .19s cubic-bezier(.56,.41,.42,1.2);
+      --transition: .18s cubic-bezier(.56,.41,.42,1.2);
     }
     body {
       background: var(--bg);
@@ -22,39 +22,38 @@
       font-family: 'DM Sans', 'Montserrat', Arial, sans-serif;
       margin: 0;
       min-height: 100vh;
-      transition: background var(--transition);
     }
     .container {
-      max-width: 850px;
-      margin: 50px auto 0 auto;
-      padding: 24px;
+      max-width: 860px;
+      margin: 48px auto 0 auto;
+      padding: 26px 12px;
       background: var(--fg);
       border-radius: var(--radius);
-      box-shadow: 0 10px 32px #000c;
+      box-shadow: 0 10px 36px #000c;
       animation: fadein .7s;
     }
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       margin-bottom: 38px;
       border-bottom: 2px solid #191b22;
-      padding-bottom: 12px;
+      padding-bottom: 14px;
     }
     nav .logo {
       font-size: 2em;
       font-weight: 700;
-      letter-spacing: .04em;
       color: var(--primary);
+      letter-spacing: .03em;
     }
     .nav-links a {
       color: var(--primary);
       font-weight: 600;
       text-decoration: none;
-      font-size: 1.15em;
-      margin: 0 14px;
-      padding: 7px 18px;
-      border-radius: 18px;
+      font-size: 1.13em;
+      margin: 0 12px;
+      padding: 7px 16px;
+      border-radius: 16px;
       transition: background var(--transition), color var(--transition);
       cursor: pointer;
     }
@@ -67,7 +66,7 @@
       to { opacity: 1; transform: translateY(0);}
     }
     h1, h2 { color: var(--accent); margin-top: 0;}
-    h2 { color: var(--primary); margin-bottom: 15px;}
+    h2 { color: var(--primary); margin-bottom: 17px;}
     .card {
       background: var(--card);
       border-radius: var(--radius);
@@ -75,10 +74,11 @@
       padding: 28px 24px;
       margin-bottom: 26px;
       transition: transform var(--transition), box-shadow var(--transition);
+      animation: fadein .6s;
     }
     .card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 38px #00cfff44;
+      box-shadow: 0 10px 38px #00cfff55;
+      transform: scale(1.015);
     }
     .skills-list span {
       display: inline-block;
@@ -95,8 +95,9 @@
     }
     .skills-list span:hover {
       background: var(--primary);
-      color: var(--card);
-      box-shadow: 0 0 7px var(--primary);
+      color: var(--fg);
+      box-shadow: 0 0 11px var(--primary);
+      transform: scale(1.09);
     }
     .project-grid {
       display: grid;
@@ -108,14 +109,13 @@
       background: var(--fg);
       border-radius: 18px;
       box-shadow: 0 2px 15px #0002;
-      padding: 20px;
+      padding: 22px;
       transition: transform var(--transition), box-shadow var(--transition);
       position: relative;
     }
     .project-card:hover {
-      transform: scale(1.03);
-      box-shadow: 0 10px 28px var(--primary);
-      z-index: 2;
+      transform: scale(1.04);
+      box-shadow: 0 12px 38px var(--primary);
     }
     .project-card a {
       color: var(--primary);
@@ -129,13 +129,13 @@
     .contact-btn {
       display: inline-block;
       background: var(--primary);
-      color: #0f1012;
+      color: #181922;
       font-weight: bold;
       border: none;
       border-radius: 22px;
-      padding: 14px 34px;
+      padding: 15px 38px;
       margin-top: 18px;
-      font-size: 1.13em;
+      font-size: 1.08em;
       box-shadow: 0 2px 12px #00cfff55;
       cursor: pointer;
       transition: background var(--transition), color var(--transition), box-shadow var(--transition);
@@ -145,7 +145,6 @@
       color: var(--primary);
       box-shadow: 0 4px 20px var(--primary);
     }
-    /* Responsive */
     @media (max-width: 700px) {
       .container { margin-top: 18px; padding: 10px;}
     }
@@ -161,51 +160,43 @@
       <div class="logo">Your Name</div>
       <div class="nav-links">
         <a class="active" onclick="showPage('about')">About</a>
-        <a onclick="showPage('resume')">Resume</a>
-        <a onclick="showPage('portfolio')">Portfolio</a>
+        <a onclick="showPage('expertise')">Expertise</a>
+        <a onclick="showPage('works')">Works</a>
         <a onclick="showPage('contact')">Contact</a>
       </div>
     </nav>
     <div id="page-content">
-      <!-- Default: About -->
-      <div id="about" class="card fadein">
+      <div id="about" class="card">
         <h2>Hi, I'm Your Name</h2>
         <p>
-          Product designer & developer based in India.<br>
-          I bring ideas to life, focusing on digital product design, UX, and motion. My philosophy: every detail matters.
+          Product Designer & Developer based in India. <br>
+          I design digital products that balance aesthetics with usability.<br>
+          From concept to production, I believe every detail matters.
         </p>
         <p>
-          Specialised in: UX/UI, web design, prototyping, fitness/nutrition tech.<br>
-          Learning: Emotional intelligence, creative coding.
+          Passion for UX/UI, web design, and fitness tech.<br>
+          Available for collaborations.
         </p>
       </div>
-      <div id="resume" class="card" style="display:none;">
-        <h2>Resume</h2>
-        <b>Work Experience</b><br>
-        Senior Product Designer, Tech Co.<br>
-        2022 – Present<br>
-        <i>Designing smartwatch UX, leading mobile fitness app interfaces.</i><br>
-        <br>
-        <b>Education</b><br>
-        B.Tech Computer Science, College Name, 2021<br>
-        <br>
-        <b>Skills</b>: <br>
+      <div id="expertise" class="card" style="display:none;">
+        <h2>Expertise</h2>
         <div class="skills-list">
-          <span>UX Design</span>
-          <span>HTML5</span>
+          <span>UX/UI Design</span>
+          <span>Prototyping</span>
           <span>Motion Design</span>
-          <span>JavaScript</span>
-          <span>Fitness Tech</span>
+          <span>Design Systems</span>
+          <span>Web Design</span>
           <span>Branding</span>
-          <span>Presentation</span>
+          <span>Fitness Tech</span>
         </div>
+        <p>Currently learning: Emotional Intelligence, Creative Coding.</p>
       </div>
-      <div id="portfolio" class="card" style="display:none;">
-        <h2>Portfolio / Selected Works</h2>
+      <div id="works" class="card" style="display:none;">
+        <h2>Selected Works</h2>
         <div class="project-grid">
           <div class="project-card">
-            <strong>Smartwatch UX Redesign</strong><br>
-            <i>Series 10 Apple Watch UI Prototype</i><br>
+            <strong>Smartwatch UI Redesign</strong><br>
+            <i>Series 10 Apple Watch Prototype</i><br>
             <small>2024</small><br>
             <a href="#">View case study</a>
           </div>
@@ -215,16 +206,17 @@
             <small>2023</small><br>
             <a href="#">View project</a>
           </div>
+          <!-- Add more projects as needed -->
         </div>
       </div>
       <div id="contact" class="card" style="display:none;">
         <h2>Contact</h2>
         <p>
-          Want to collaborate or connect?<br>
-          <a class="contact-btn" href="mailto:your.email@gmail.com">Email Me</a>
+          Interested in collaborating or just want to connect?<br>
+          <a class="contact-btn" href="mailto:your.email@email.com">Email Me</a>
         </p>
         <p>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> | 
+          <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
           <a href="https://github.com/yourusername" target="_blank">GitHub</a>
         </p>
       </div>
@@ -232,7 +224,7 @@
   </div>
   <script>
     function showPage(page) {
-      let pages = ['about', 'resume', 'portfolio', 'contact'];
+      let pages = ['about', 'expertise', 'works', 'contact'];
       pages.forEach(function(p) {
         document.getElementById(p).style.display = 'none';
       });

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name – Interactive Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    :root {
+      --bg: #111215;
+      --card: #191a1f;
+      --primary: #00cfff;
+      --accent: #fff;
+      --text: #dddddd;
+      --shadow: 0 4px 12px #0009;
+      --radius: 14px;
+      --trans: 0.18s cubic-bezier(.6,.41,.36,1.2);
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      transition: background var(--trans);
+    }
+    .container {
+      max-width: 740px;
+      margin: 56px auto 0 auto;
+      padding: 12px;
+      box-shadow: var(--shadow);
+      background: var(--card);
+      border-radius: var(--radius);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 42px;
+    }
+    .nav-links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 6px 18px;
+      border-radius: var(--radius);
+      margin: 0 4px;
+      transition: background var(--trans), color var(--trans);
+      cursor: pointer;
+      font-size: 1.08em;
+    }
+    .nav-links a.active, .nav-links a:hover {
+      background: var(--primary);
+      color: var(--card);
+    }
+    .fade-in {
+      animation: fadein 0.7s;
+    }
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1, h2 {
+      color: var(--accent);
+      margin-top: 0;
+    }
+    h2 {
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+    .card {
+      background: #222328;
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 18px 16px;
+      margin-bottom: 32px;
+      transition: transform .18s cubic-bezier(.6,.41,.36,1.2), box-shadow .22s;
+    }
+    .card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 8px 32px #00cfff33;
+    }
+    .skills-list span {
+      display: inline-block;
+      margin: 6px 12px 6px 0;
+      padding: 7px 18px;
+      background: var(--bg);
+      color: var(--primary);
+      border-radius: 22px;
+      font-size: .98em;
+      font-weight: 600;
+      border: 1px solid var(--primary);
+      transition: background var(--trans), color var(--trans);
+      cursor: pointer;
+    }
+    .skills-list span:hover {
+      background: var(--primary);
+      color: #222;
+      box-shadow: 0 0 6px var(--primary);
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+      gap: 18px;
+      margin-top: 12px;
+    }
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px #0002;
+      padding: 17px;
+      transition: transform var(--trans), box-shadow var(--trans);
+      position: relative;
+    }
+    .project-card:hover {
+      transform: scale(1.045);
+      box-shadow: 0 6px 26px var(--primary);
+      z-index: 2;
+    }
+    .project-card a {
+      color: var(--primary);
+      text-decoration: underline;
+      font-size: 1em;
+      transition: color var(--trans);
+    }
+    .project-card a:hover {
+      color: var(--accent);
+    }
+    .contact-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #222;
+      font-weight: bold;
+      border: none;
+      border-radius: 22px;
+      padding: 11px 32px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 1.2em;
+      box-shadow: 0 2px 12px #00cfff55;
+      transition: background var(--trans), color var(--trans), box-shadow var(--trans);
+    }
+    .contact-btn:hover {
+      background: var(--accent);
+      color: var(--primary);
+      box-shadow: 0 4px 20px var(--primary);
+    }
+    /* Responsive */
+    @media (max-width: 600px) {
+      .container { margin-top: 22px; padding: 9px;}
+      nav { flex-direction: column; gap: 8px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container fade-in">
+    <nav>
+      <div><h1>Your Name</h1></div>
+      <div class="nav-links">
+        <a class="active" onclick="showPage('home')">Home</a>
+        <a onclick="showPage('resume')">Resume</a>
+        <a onclick="showPage('portfolio')">Portfolio</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+    </nav>
+    <div id="page-content">
+      <!-- Default: Home -->
+      <div id="home" class="fade-in">
+        <div class="card">
+          <h2>👋 Welcome</h2>
+          <p>
+            Hi, I'm <b>Your Name</b>. <br>
+            <span style="font-weight:500;">
+              I design & develop digital experiences.<br>
+              Experienced in UX design, web technology, fitness science & more.
+            </span>
+          </p>
+          <p>
+            Explore my resume, projects, and let's connect!
+          </p>
+        </div>
+      </div>
+      <div id="resume" style="display:none;" class="fade-in">
+        <div class="card">
+          <h2>Resume</h2>
+          <b>Work Experience:</b><br>
+          UX Designer, Apple Inc. <br>
+          <i>2023 – Present</i><br>
+          - Designing smart device interfaces<br>
+          - Led Series 10 Apple Watch UI<br>
+          <br>
+          <b>Education:</b><br>
+          B.Tech Computer Science, IIT Bombay, 2021<br>
+          <br>
+          <b>Skills:</b><br>
+          <div class="skills-list">
+            <span>UX Design</span>
+            <span>HTML5</span>
+            <span>CSS Animation</span>
+            <span>JavaScript</span>
+            <span>Fitness Science</span>
+            <span>Audio Engineering</span>
+            <span>React</span>
+            <span>Presentation</span>
+          </div>
+        </div>
+      </div>
+      <div id="portfolio" style="display:none;" class="fade-in">
+        <div class="card">
+          <h2>Portfolio</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <strong>Smartwatch UX Redesign</strong><br>
+              <i>Apple Watch Series 10 Prototype</i><br>
+              <small>2024</small><br>
+              <a href="#">View Prototype</a>
+            </div>
+            <div class="project-card">
+              <strong>Nutrition Planner App</strong><br>
+              <i>React, Firebase</i><br>
+              <small>2023</small><br>
+              <a href="#">Repo</a>
+            </div>
+            <!-- Add more projects! -->
+          </div>
+        </div>
+      </div>
+      <div id="contact" style="display:none;" class="fade-in">
+        <div class="card">
+          <h2>Contact</h2>
+          <p>
+            Want to collaborate or just say hi?
+          </p>
+          <a class="contact-btn" href="mailto:your.email@gmail.com">Email Me</a>
+          <p>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    function showPage(page) {
+      let pages = ['home', 'resume', 'portfolio', 'contact'];
+      pages.forEach(function(p) {
+        document.getElementById(p).style.display = 'none';
+      });
+      document.getElementById(page).style.display = 'block';
+      document.querySelectorAll('.nav-links a').forEach(function(a, idx) {
+        a.classList.remove('active');
+        if (pages[idx] === page) a.classList.add('active');
+      });
+      // Animation effect
+      document.getElementById(page).classList.remove('fade-in');
+      void document.getElementById(page).offsetWidth; // force reflow
+      document.getElementById(page).classList.add('fade-in');
+    }
+  </script>
+</body>
+</html>
